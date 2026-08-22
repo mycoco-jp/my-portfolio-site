@@ -9,7 +9,7 @@ icon.addEventListener('click', ()=>{
 });
 
 
-// ふわっと演出
+
 // ふわっと演出
 const sections = document.querySelectorAll("section");
 
