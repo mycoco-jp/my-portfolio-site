@@ -1,0 +1,1040 @@
+
+@charset "utf-8";
+html{
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 1280px;
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+  /* CTA 始まり*/
+
+  .booking-button span{
+    font-size: 1.2rem;
+    font-weight: 900;
+  }
+  
+  .buttons{
+    background-color: #fff;
+  }
+  
+  .booking-button,
+  .buttons_login,
+  .buttons_contact{
+    /* font-size: 1.1rem; */
+    width: 100%;
+    max-width: 280px;
+    margin: 50px auto;
+    display: block;
+    background-color: #ffff00;
+    text-align: center;
+    padding: 20px;
+    border-radius: 50px;
+    gap: 24px;
+  }
+
+  .booking-button{
+    display: block;
+  }
+  
+  .tour-button{
+    display: block;
+    background-color: #ffff00;
+  }
+
+  .booking-button:hover{
+    transform: scale(1.1);
+  }
+
+  @media screen and (min-width:768px) {
+
+    .buttons{
+      margin: 0 auto;
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+  }
+
+  /* CTA終わり */
+
+.header{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #87ceeb; */
+  border-bottom: 1px solid #b0b0b0;
+  padding:10px 8px 8px;
+
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+
+.header-inner{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  margin-left: auto;
+  /* background-color: #74d5f9; */
+}
+
+.logo{
+  width: 200px;
+  box-sizing: border-box;
+}
+
+.logo-img{
+  width: 100%;
+  height: auto;
+}
+
+.header-text{
+  font-size: 0.7rem;
+  padding-bottom: 4px;
+}
+
+.hamburger-title{
+  font-size: 0.5rem;
+  margin-left: auto;
+}
+
+.header-icon{
+  width: 24px;
+  height: 24px;
+}
+
+.icon{
+  width: 56px;
+  height: 56px;
+  /* fill: #fff; */
+  stroke: #fff;
+}
+.li-icon__dark{
+  width: 56px;
+  height: 56px;
+  /* fill: #fff; */
+  stroke:#32ACDC;
+}
+
+.icon-visa{
+  fill:#32ACDC;
+}
+
+.icon_heart{
+  fill: #fff;
+}
+
+.li-icon__light{
+  width: 56px;
+  height: 56px;
+  /* fill: #fff; */
+  stroke:#ff682c;
+}
+
+.icon_map-pin,
+.icon-sailboat,
+.icon-headset{
+  fill:#ff682c;
+}
+
+.header-actions{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  position:relative;
+}
+
+.header-ul{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-li a{
+  font-size: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 5px;
+  list-style: none;
+}
+
+.hamburger-title{
+  margin-left: 16px;
+}
+
+.hamburger-icon{
+  width: 30px;
+  /* background-color:#7a7a7a; */
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.hamburger-line{
+width: 20px;
+height: 2px;
+background-color: #000;
+border-radius: 20px;
+transition: 0.3s;
+}
+
+.hamburger-icon.open .hamburger-line:nth-child(1){
+transform: translateY(5px) rotate(45deg);
+}
+.hamburger-icon.open .hamburger-line:nth-child(2){
+opacity: 0;
+}
+.hamburger-icon.open .hamburger-line:nth-child(3){
+  transform: translateY(-5px) rotate(-45deg);
+
+}
+
+.mobile-menu{
+  display: none;
+  width: 200px;
+  max-width: 200px;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top:100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 24px 0;
+  background-color: #32ACDC;
+  z-index: 10;
+}
+
+.mobile-menu.open{
+  display: flex;
+  
+}
+
+.mobile-menu_list{
+  padding: 10px;
+  /* font-size: 1.5rem; */
+  font-weight: 600;
+}
+
+.overlay{
+  display: none;
+  position: fixed;
+  inset: 0;
+  width:100%;
+  background-color: #32ACDC;
+  z-index: 5;
+}
+
+.overlay.open{
+  display: block;
+}
+
+.pc-menu{
+  display: none;
+}
+
+@media screen and (min-width:768px) {
+  .header-ul,
+  .mobile-menu,
+  .hamburger-title{
+    display: none;
+  }
+
+
+  .pc-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    }
+
+  .pc-menu_list:hover{
+    transform: scale(1.2);
+    font-weight: bold;
+  }
+
+  .header-actions{
+    display: none;
+  }
+
+  }
+
+.breadcrumb{
+  font-size: 1rem;
+  color: #7d7c7c;
+  padding: 50px 8px 8px;
+  background: rgba(255,255,255,0.8); /* FVの上でも可読性確保 */
+  backdrop-filter: blur(8px); /* おしゃれ系 */
+
+  position: sticky;
+  top: 100px; /* ヘッダーの高さ分 */
+  z-index: 1500;
+
+}
+
+.bread-icon{
+  width: 20px;
+  height: 20px;
+  stroke: #7d7c7c;
+  vertical-align: middle;
+}
+
+ol{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3px;
+}
+
+/* ヘッダー　　終 */
+
+.first-view{
+  width: 100%;
+  max-width: 1280px;
+  background-image: url("../imgs/travelLP-spFV.png");
+  /* background-color: #b0b0b0; */
+  height: 60svh;
+  background-size: contain;
+  position: relative;
+  background-repeat: no-repeat;
+  margin: 0 auto 10px;
+  background-position: center;
+  /* padding-top:300px ; */
+}
+@media screen and (min-width:768px){
+  .first-view{
+    width: 100%;
+    height: 90vh;
+    background-image: url("../imgs/travelLP-tabletFV.png"); 
+  
+  }
+
+
+@media screen and (min-width:1024px){
+  .first-view{
+    width: 100%;
+    height: 90vh;
+    background-image: url("../imgs/travelLP-pcFV.png"); 
+  
+  }
+
+  .mobile-menu{
+    display: none;
+  }
+
+}
+
+
+  .mobile-menu{
+    display: none;
+  }
+
+}
+
+section {
+  scroll-margin-top: 280px;
+}
+
+
+h1{
+  font-size: 1.6rem;
+  margin: 16px 0;
+}
+
+.page-lead{
+  /* background-color: pink; */
+  padding-bottom: 160px;
+}
+
+.page-description{
+  border: 10px dotted #32ACDC;
+  padding: 16px;
+  margin: 30px 0;
+  font-size: 1.6rem;
+}
+
+.page-lead-inner{
+  padding: 16px;
+}
+
+.highlight{
+  background: linear-gradient(transparent 60%, #ffff00 60%);
+}
+
+.index{
+  width: 100%;
+  padding: 16px 0 32px;
+} 
+
+.index-menu_items{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.index-menu_item-list{
+  font-weight: bold;
+  background-color: #fff;
+  height: 50px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.index-menu_item-list:hover{
+  color: #fff;
+  background-color: #32ACDC;
+}
+
+.index_icon{
+  width: 14px;
+  height: 14px;
+}
+
+/* 共通　ー　始 */
+
+.section-wrapper{
+  position: relative;
+  padding: 0 8px;
+}
+
+h2{
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 16px 0 32px;
+  color: #0b0e2d;
+}
+
+h3{
+  font-family: "Train One";
+  color: #fff;
+  font-size: 2rem; 
+  text-align: center;
+  line-height: 1.5;
+  /* letter-spacing: 1.1px; */
+  padding: 8px;
+}
+
+.decor{
+  display: none;
+}
+
+
+
+
+@media screen and (min-width:768px) {
+  h2{
+    padding: 56px;
+  }
+
+
+.decor{
+  display: block;
+  position: absolute;
+  z-index: 10;
+}
+
+.decor1{
+  top: 200px;
+  left: 50px;
+  rotate: 45deg;
+  width: 240px;
+}
+
+.decor2{
+  top:  -300px;
+  right: 50px;
+  width: 240px;
+}
+
+.decor3{
+  top: 1000px;
+  right: 50px;
+  width: 240px;
+}
+
+.decor4{
+  top: -100px;
+  left: 100px;
+  width: 180px;
+  rotate: -10deg;
+}
+
+.decor5{
+  bottom: 1000px;
+  right: 50px;
+  width: 240px;
+  rotate: 30deg;
+}
+
+.decor6{
+  top: 100px;
+  right: 50px;
+  rotate: 20deg;
+  width: 120px;
+}
+
+.decor7{
+  top: 1000px;
+  left: 50px;
+  width: 200px;
+}
+
+.decor8{
+  bottom: 1180px;
+  right: 100px;
+  width: 200px;
+}
+
+}
+
+.section-title{
+  width: 180px;
+  height: 90px;
+  border-radius: 90px 90px 0 0;
+  border-top:10px solid #fff;
+  border-right: 10px solid #fff;
+  border-left: 10px solid #fff;
+  align-items: center;
+  position: absolute;
+  top: -90px;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.section-title--dark{
+  background-color: #32ACDC;
+}
+
+.section-title--light{
+  background-color: #ff682c;
+}
+
+.section-title__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.section-inner--dark{
+  padding: 20px 20px 120px;
+  background-color: #32ACDC; 
+  position: relative;
+  border-bottom: 10px solid #fff;
+  /* background: linear-gradient(70deg, #3db7d6, #fff); */
+}
+
+.section-inner--light{
+  padding: 20px 20px 120px;
+  background-color:#ff682c;
+  position: relative;
+  border-bottom: 10px solid #fff;
+
+}
+
+
+@media screen and (min-width:768px) {
+
+  .section-inner--dark{
+    padding: 60px 20px 240px;
+  }
+
+  .section-inner--light{
+    padding: 60px 20px 240px;
+  }
+}
+
+
+
+/* 共通　ー　終わり*/
+
+
+/* 安全・安心セクション　　始 */
+.info-list{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:24px;
+  padding: 0 16px; 
+}
+
+.info-item{
+  background-color: #fff;
+  /* padding:0px 12px; */
+  border-radius:12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  }
+
+
+.info-item__header{
+  /* background-color: lightblue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.info-item__title{
+  font-size: 1.5rem;
+  color: #0b0e2d;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.info-item__body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: pink; */
+  padding: 0 16px;
+  gap: 16px;
+}
+
+.info-item__image{
+  width: 50%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.info-item__text{
+  padding: 16px 0;
+}
+
+@media screen and (min-width:768px) {
+  .info-item__body{
+    width: 80%;
+    padding:0  16px 56px;
+    gap: 56px;
+  }
+  .info-item__header{
+    padding: 56px;
+  }
+
+  .info-item__title{
+    padding-bottom:24px;
+  }
+
+  .info-item__text{
+    font-size: 1.2rem; 
+  }
+  
+}
+
+/* 安全・安心セクション　　終わり */
+
+
+
+/* FAQセクション　始 */
+.faq-list{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+.faq-item{
+  position: relative;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  background-color: #fff;
+  padding: 16px;
+  gap: 16px;
+  font-size: 1.5rem;
+
+}
+
+.faq-item{
+  display: flex;
+  flex-direction: column;
+  min-height:130px; 
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.question{
+  font-weight: bold;
+  padding-left: 8px;
+  text-align: left;
+  position: relative;
+}
+
+.answer{
+  display: block;
+  padding: 0px 50px 0px 10px;
+}
+
+
+.question::before,
+.question::after{
+  display: none;
+}
+
+@media screen and (min-width:768px) {
+  /* FAQの＋マーク */
+.question::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 16px;
+  height: 1px;
+  background:#000;
+  transform:translateY(-50%);
+}
+
+.question::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 23px;
+  width: 1px;
+  height: 16px;
+  background-color: #000;
+  transform: translateY(-50%);
+}
+
+
+/* .faq-item.open .question::after{
+  display:none;
+}
+
+.answer{
+  display: none;
+}
+
+.faq-item.open{
+  display: flex;
+  flex-direction: column;
+  min-height:130px; 
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.faq-item.open .question{
+  font-weight: bold;
+
+}
+
+.faq-item.open .answer{
+  display: block;
+  padding: 0px 50px 0px 10px;
+} */
+
+}
+/*  FAQセクション　　終わり */
+
+
+/* おすすめツアー　始 */
+
+.tour-tab{
+  display: flex;
+}
+
+.tab-btn{
+  width: 250px;
+  height: 50px;
+  border-radius: 20px 20px 0 0;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tab-overseas,
+.tour-overseas{
+  background-color: #32ACDC;
+}
+
+
+.tour-list{
+  display:none;
+  width: 100%;
+  padding: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* 250px以上ならカードを増やす
+スペースが足りなければ折り返す
+余った幅は均等に広がる */
+  gap: 16px;
+}
+
+
+.tab-domestic,
+.tour-domestic{
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+.tour-list.active {
+    display: grid;   /* 今使っているレイアウトに合わせる */
+}
+
+
+.tour-items{
+  background-color: #fff;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px #ffffff;
+}
+
+.tour-items:hover{
+  border: 5px solid #ffff00;
+  scale: 1.1;
+}
+
+.tour-items-title{
+  font-weight: bold;
+  font-size: 1.2rem;
+  /* min-height:2.8em;
+  line-height:1.4; */
+  text-align: center;
+
+}
+/* なぜ2.8em？
+1行 ≒ 1.4em
+2行 ≒ 2.8em
+なので 2行分の高さを確保しています。 */
+
+
+.tour-image-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  overflow: hidden;
+}
+
+.tour-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.tour-text{
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.tour-items-title{
+  display: flex;
+  align-items: flex-start; /* 上下中央 */
+}
+
+.tour-text-price{
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: red;
+}
+
+.tour-text-others{
+  font-size: 0.7rem;
+  color: #7a7a7a;
+}
+
+/* おすすめツアー　終 */
+
+
+/* リンクセクション　始 */
+.link__list{
+  font-size: 1.2rem;
+  background-color: #32ACDC;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #fff;
+}
+
+.link__item{
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  align-items: center;
+} 
+
+.link-arrow{
+  width: 24px;
+  margin-left: 30px;
+  stroke: #333;
+}
+
+.link__menu{
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #32ACDC;
+}
+.link__menu.open{
+  display: flex;
+}
+
+.link__subitem{
+  padding: 16px;
+  background-color: #fff;
+  border-bottom:1px solid #b0b0b0;
+}
+
+.link__subitem:last-child{
+  border-bottom:none;
+}
+
+.link__subitem:hover{
+  font-weight: bold;
+}
+
+
+.travel-link-button{
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+
+@media screen and (min-width:768px) {
+  .travel-link-button{
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
+
+
+  .link-arrow{
+    display: none;
+  }
+
+.link__subitem{
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; */
+  border-bottom:none;
+  background-color: #fff;
+  padding: 0px;
+}
+
+
+
+.link__menu{
+  display: flex;
+  background-color: #fff;
+  padding: 32px 64px;
+
+}
+
+
+  .link__sublist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 0 auto; */
+  }
+
+
+
+
+}
+
+
+
+
+/* リンクセクション　終わり*/
+
+/* フッター　始 */
+.footer-container{
+  margin-top: 16px;
+  border-top: 1px solid #b0b0b0;
+  border-bottom: 1px solid #b0b0b0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-head-title{
+  font-weight: bold;
+}
+
+.footer-item{
+  font-size: 0.8rem;
+}
+
+.footer-list{
+  display: flex;
+  gap: 16px;
+}
+
+
+@media screen and (min-width:768px) {
+  .footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .footer-head-title{
+    margin-bottom: 8px;
+  }
+
+  .footer-list{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+}
+
+.copyright{
+  text-align: center;
+  font-size: 0.5rem;
+  padding: 24px;
+}

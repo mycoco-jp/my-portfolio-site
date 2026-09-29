@@ -139,13 +139,14 @@ position: relative;
     display: flex;
     justify-content: space-between;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     background-color: #FCF9F4;
 }
 
 .logo-wrapper{
     display: flex;
     align-items: center;
+
 }
 
 .logo-img-box{
@@ -169,7 +170,7 @@ position: relative;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .hamburger-line{
@@ -180,17 +181,17 @@ position: relative;
     transition: 0.3s;
 }
 
-.header-menu{
+
+.header-menu {
     display: none;
-    width: 100%;
-    background-color:#FCF9F4;
+    width: 100px;
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-top: 60px;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
 }
 
 .header-menu.open{
@@ -203,7 +204,6 @@ position: relative;
     align-items: center;
     justify-content: center;
     gap: 36px;
-    padding: 40px 12px;
 }
 
 .menu-list__item{
@@ -239,6 +239,21 @@ position: relative;
 }
 .hamburger-icon.open .hamburger-line:nth-child(3){
     transform: translateY(-7px) rotate(-45deg);
+}
+
+.overlay{
+    display: none;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: #FCF9F4;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+}
+
+.overlay.open{
+    display:block;
 }
 
 
@@ -624,7 +639,7 @@ WORKS
     gap: 2px;
     background-color: #ffffff;
     border-radius: 20px;
-    padding-bottom: 16px;
+    padding-bottom: 56px;
     box-shadow:2px 2px 10px 0px rgb(200, 200, 200,0.3);
 
 }
@@ -1042,18 +1057,19 @@ footer{
 ===================================== */
 @media screen and (min-width:900px) {
     .header{
+        position: fixed;
+        margin: 0 auto;
         max-width: 1800px;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding: 16px;
 }
 
     .logo-img-box{
+        position: static;
         width: 100px;
         height: 50px;
-    }
-
-    .logo-text{
-        width: 100%;
+     
     }
 
 
@@ -1063,11 +1079,15 @@ footer{
 
     .header-menu{
         display: flex;
+        flex: 1;
         justify-content: flex-end;
         background-color: #FCF9F4;
         position: static;
         margin-top: 0;
-        width: 100%;
+
+        left: auto;
+        transform: none;
+        width: auto;
     }
 
     .first-view{
