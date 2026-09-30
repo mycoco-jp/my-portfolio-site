@@ -195,7 +195,7 @@ section{
     transform: translateY(0);
 }
 
-  .cta{
+.cta{
     display: flex;
     justify-content: center;
     width: 200px;
@@ -486,6 +486,7 @@ transition: 1s;
     height: 100%;
     object-fit: cover;
     background-color: #FCF9F4;
+
 }
 
 .skill-tags{
